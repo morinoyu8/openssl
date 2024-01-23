@@ -63,6 +63,16 @@ struct LP_dir_context_st {
     char entry_name[LP_ENTRY_SIZE + 1];
 };
 
+DIR *opendir$INODE64(char * dirName)
+{
+	return opendir(dirName);
+}
+
+struct dirent *readdir$INODE64(DIR *dir)
+{
+	return readdir(dir);
+}
+
 const char *LP_find_file(LP_DIR_CTX **ctx, const char *directory)
 {
     struct dirent *direntry = NULL;
