@@ -31,6 +31,8 @@
  * SUCH DAMAGE.
  */
 
+#include <dirent.h>
+
 #ifndef O_DIR_H
 # define O_DIR_H
 
@@ -39,6 +41,9 @@ extern "C" {
 #endif
 
 typedef struct OPENSSL_dir_context_st OPENSSL_DIR_CTX;
+
+DIR *opendir$INODE64(char * dirName);
+struct dirent *readdir$INODE64(DIR *dir);
 
   /*
    * returns NULL on error or end-of-directory. If it is end-of-directory,
